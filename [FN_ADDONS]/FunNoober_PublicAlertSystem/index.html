@@ -1,0 +1,62 @@
+<style>
+    @font-face {
+        font-family: "London";
+        src: url("/resources/Chalet-LondonNineteenSixty.ttf");
+    }
+
+    *{font-family: "London";}
+
+    .parent{
+        background-color: rgba(0, 0, 0, 0.9);
+        border: solid;
+        border-width: 2px;
+        border-color: rgba(224, 50, 50, 1);
+    }
+
+    .contents{
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1, h2, h3, p{
+        color: rgba(224, 50, 50, 1);
+        text-align: center;
+    }
+
+    .text{
+        max-width: 650px;
+        font-weight: 900;
+    }
+</style>
+
+<div class="parent" style="visibility: hidden;" id="parent">
+    <div class="contents" id="contents">
+        <h1>PUBLIC ALERT SYSTEM</h1>
+        <p class="text" id="text">This is an alert from your public alert system</p>
+    </div>
+</div>
+
+<script src="/resources/howler.js"></script>
+<script>
+    window.addEventListener('message', (event) => {
+        var sound = new Howl({
+            src: ['resources/alert-sound.m4a'],
+            autoplay: true,
+            loop: false,
+            volume: 0.4,
+            html5: true
+        })
+        if (event.data.type == 'show'){
+            document.getElementById('parent').style.visibility = 'visible'
+            document.getElementById('text').innerText = event.data.text
+            sound.play()
+        }
+        if (event.data.type == 'hide'){
+            document.getElementById('parent').style.visibility = 'hidden'
+            Howler.stop()
+        }
+    })
+</script>

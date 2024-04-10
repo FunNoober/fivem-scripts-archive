@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+<style>
+    @font-face {
+        font-family: 'London';
+        src: url('assets/Chalet-LondonNineteenSixty.ttf');
+    }
+    *{
+        font-family: 'London';
+    }
+</style>
+
+<script src="assets/howler.js"></script>
+<script>
+    window.addEventListener('message', (event) => {
+        if (event.data.type == 'play'){
+            var sound = new Howl({
+                src: ['assets/panic.ogg'],
+                html5: true,
+                autoplay: true,
+                loop: false,
+                volume: 0.7
+            })
+            sound.play()
+            var notyf = new Notyf({
+                position: {
+                    x: 'left',
+                    y: 'center'
+                },
+                types: [
+                    {
+                        type: 'error',
+                        background: '#c41230',
+                        duration: 15000,
+                        dismissible: false,
+                        icon: false,
+                        ripple: false
+                    }
+                ]
+            })
+            notyf.open({
+                type: 'error',
+                message: 'A panic has been pressed'
+            })
+        }
+        if (event.data.type == 'tune'){
+            if (event.data.value == false){
+                var notyf = new Notyf({
+                    position: {
+                        x: 'left',
+                        y: 'center'
+                    },
+                    types: [
+                        {
+                            type: 'info',
+                            background: '#005288',
+                            duration: 1000,
+                            dismissible: false,
+                            icon: false,
+                            ripple: false
+                        }
+                    ]
+                })
+                notyf.open({
+                    type: 'info',
+                    message: 'Tuned out of panic'
+                })
+            }
+            else{
+                var notyf = new Notyf({
+                    position: {
+                        x: 'left',
+                        y: 'center'
+                    },
+                    types: [
+                        {
+                            type: 'info',
+                            background: '#005288',
+                            duration: 1000,
+                            dismissible: false,
+                            icon: false,
+                            ripple: false,
+                        }
+                    ]
+                })
+                notyf.open({
+                    type: 'info',
+                    message: 'Tuned into panic'
+                })
+            }
+        }
+    })
+</script>

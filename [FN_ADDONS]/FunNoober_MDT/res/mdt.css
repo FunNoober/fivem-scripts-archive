@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'vcr';
+    src: url('vcr_osd.ttf');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'vcr';
+    color: white;
+}
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.mdt-outer{
+    padding: 1vw;
+    margin: 1vw;
+    min-width: 15vw;
+    min-height: 7vh;
+    background-color: rgb(52, 52, 52);
+    border-radius: 10px;
+    border-width: 0.25vw;
+    border-color: lightblue;
+    border-style: solid;
+    box-shadow: rgba(0, 0, 0, 0.345) 0px 15px 25px;
+}
+
+.mdt-inner{
+    display: flex;
+    flex-direction: column;
+    min-width: 10vw;
+}
+
+#brand-name{
+    text-align: center;
+    padding: 5px;
+    color: lightblue;
+}
+
+h1{
+    font-size: 0.75vw;
+}
+
+h2{
+    padding: 5px;
+    font-size: 0.5vw;
+}
+
+h3, textarea{
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 2px;
+    box-shadow: white 0px 0px 45px;
+    text-wrap: wrap;
+    font-size: 0.5vw;
+}
+
+
+#call-contents{
+    font-weight: 900;
+    resize: vertical;
+    height: fit-content;
+    font-size: 0.5vw;
+}
+
+span{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.row-group{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+#speed-display{
+    flex-grow: 1;
+}
+
+#plate-display{
+    flex-grow: 1;
+}
+
+#locked-status{
+    width: 100%;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <audio id="aud" src="html/purge.ogg" type="audio/ogg"></audio>
+    <script>
+        window.addEventListener('message', (event) => {
+            var audSrc = document.getElementById("aud")
+            audSrc.crossOrigin = 'anonymous'
+            audSrc.play()
+        })
+    </script>
+</body>
+</html>

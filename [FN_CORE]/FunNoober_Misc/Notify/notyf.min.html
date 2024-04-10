@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="notyf.min.css" />
+<style>
+  @font-face {
+    font-family: "London";
+    src: url("Chalet-LondonNineteenSixty.ttf");
+  }
+  * {
+    font-family: "London";
+  }
+</style>
+<script src="notyf.min.js"></script>
+<script>
+  window.addEventListener("message", (event) => {
+    const notyf = new Notyf({
+      duration: 2000,
+      position: {
+        x: "left",
+        y: "center",
+      },
+      types: [
+        {
+          type: "error",
+          background: "#e03232",
+          icon: false,
+          dismissible: false,
+        },
+        {
+          type: "warning",
+          background: "#e0c850",
+          icon: false,
+          dismissible: false,
+        },
+        {
+          type: "info",
+          background: "#5db6e5",
+          icon: false,
+          dismissible: false,
+        },
+      ],
+    });
+    if (event.data.notifType === "error") {
+      notyf.open({
+        type: "error",
+        message: event.data.notifText,
+      });
+    }
+    if (event.data.notifType === "warning") {
+      notyf.open({
+        type: "warning",
+        message: event.data.notifText,
+      });
+    }
+    if (event.data.notifType === "info") {
+      notyf.open({
+        type: "info",
+        message: event.data.notifText,
+      });
+    }
+  });
+</script>

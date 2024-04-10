@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("ROBOTO-REGULAR.TTF");
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: "Roboto";
+}
+
+*::-webkit-scrollbar{
+    display: none;
+}
+
+.store{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    align-items: center;
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+@media (min-width: 1920px){
+    .contents{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media (max-width: 1920px) {
+    .contents{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.contents{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: grid;
+}
+
+.heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.close-button{
+    min-width: 25px;
+    min-height: 25px;
+    max-width: 25px;
+    max-height: 25px;
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+}
+
+.weapon{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    min-width: 350px;
+    max-width: 350px;
+    margin-top: 15px;
+    margin-right: 15px;
+    width: 100%;
+    min-height: 75px;
+}
+
+.weapon-info{
+    width: 100%;
+    left: 0;
+}
+
+.weapon-info h2{
+    width: 100%;
+}
+
+.purchase-button{
+    min-width: 35px;
+    min-height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+    background-color: limegreen;
+    color: white;
+    border-radius: 100%;
+    font-size: 14pt;
+    transition: background-color 500ms;
+    right: 0;
+}
+
+.purchase-button:hover{
+    background-color: rgb(53, 173, 53);
+}
+
+.weapon-info{
+    flex: 2;
+}
+
+ul, li{
+    list-style: none;
+}
+
+h1, h2, h3, h4, p{
+    color: white;
+}

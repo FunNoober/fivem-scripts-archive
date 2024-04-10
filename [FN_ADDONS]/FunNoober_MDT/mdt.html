@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDT</title>
+    <link rel="stylesheet" href="res/mdt.css">
+</head>
+<body>
+    <div class="mdt-outer" id="mdt-outer" style="visibility: hidden;">
+        <div class="mdt-inner">
+            <h1 id="brand-name">WAVE SOLUTIONS</h1>
+            <div class="row-group">
+                <h2>Call Source</h2>
+                <h3 id="call-source">No new 911</h3>
+            </div>
+            <div class="row-group">
+                <h2>Call Contents</h2>
+                <textarea  rows="6" cols="6" id="call-contents" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>No new 911</textarea>
+            </div>
+            <div class="row-group">
+                <h2>Call Location</h2>
+                <h3 id="call-location">No new 911</h3>
+            </div>
+            <span>
+                <h2>SPEED FRONT</h2>
+                <h3 id="speed-display">45 MPH</h3>
+                <h2>PLATE FRONT</h2>
+                <h3 id="plate-display">4QPW7</h3>
+            </span>
+            <span>
+                <h2>LOCKED:</h2>
+                <h3 id="locked-status">UNLOCKED [U]</h3>
+            </span>
+        </div>
+    </div>
+
+    <script src="res/mdt.js"></script>
+</body>
+</html>
